@@ -8,15 +8,6 @@
 
 #import "ViewController.h"
 
-///调用主线程同步
-#define HH_Dispatch_main_sync_safe(block)\
-if ([NSThread isMainThread]) {\
-block();\
-} else {\
-dispatch_sync(dispatch_get_main_queue(), block);\
-}
-
-
 static const NSString *kDirPath = @"/Users/caohuihui/Desktop/emoji";
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
