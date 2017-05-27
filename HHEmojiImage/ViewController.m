@@ -25,6 +25,7 @@ static const NSString *kDirPath = @"/Users/caohuihui/Desktop/emoji";
         [weakSelf createImg];
     });
     
+    
 }
 
 
@@ -74,7 +75,6 @@ static const NSString *kDirPath = @"/Users/caohuihui/Desktop/emoji";
     
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
-//    CGContextSetCharacterSpacing(ctx, 10);
     
     CGContextSetTextDrawingMode (ctx, kCGTextFillStroke);
     
@@ -82,13 +82,10 @@ static const NSString *kDirPath = @"/Users/caohuihui/Desktop/emoji";
     
     [string drawAtPoint:CGPointMake(0,0) withAttributes:@{NSFontAttributeName:font}];
     
-    // transfer image
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
-    
-//    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     
     return image;
 }
